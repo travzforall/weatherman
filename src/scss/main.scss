@@ -5,3 +5,18 @@ $color: #e3e3e3;
     padding: 0;
     box-sizing: border-box;
   }
+
+
+  body {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(230, 255, 2, 0.35),
+    rgba(253, 2, 2, 0.50)
+), url("../images/normal.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 98vh;
+   width: 98vw;
+   margin: 0 auto;
+   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
