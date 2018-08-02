@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
     crossorigin="anonymous">
 
-  <link rel="stylesheet" href="style.42b13585797b83653090.css?dbfc04af344046a66a00">
+  <link rel="stylesheet" href="style.a50f55bf046d0d2fd7d8.css?830739a1898712146b07">
   <title>The Weather</title>
 </head>
 
@@ -22,34 +22,45 @@
         <form action="">
           <input type="text" placeholder="User Identify">
           <button> Find Me </button>
-          <a href="#"><i class="fas fa-question-circle"></i></a>
+          <a href="#">
+            <i class="fas fa-question-circle"></i>
+          </a>
         </form>
         <h4>Travz the Weatherman</h4>
       </nav>
 
-      <nav class="navbar">
-          <form action="">
-              <input type="text" placeholder="Zip code or City">
-              <span class="dropdown">
-                  <a class="btn dropdown-toggle" href="#" role="button" id="imperialunit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Units (K)
-                  </a>
-                
-                  <div class="dropdown-menu" aria-labelledby="imperialunit">
-                    <a class="dropdown-item" href="#">Celcius</a>
-                    <a class="dropdown-item" href="#">Fahrenheit </a> 
-                    <a class="dropdown-item" href="#">Kelvin </a> 
-                  </div>
-                </span>
-                <button> Search </button>
-            </form>
+      <nav class="navbar" id="search-weather">
+        <form action="">
+          <input type="text" placeholder="Zipcode or City">
+          <div class="dropdown">
+            <a class="btn dropdown-toggle" href="#" role="button" id="imperialunit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Units (K)
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="imperialunit">
+              <a class="dropdown-item" href="#">Celcius</a>
+              <a class="dropdown-item" href="#">Fahrenheit </a>
+              <a class="dropdown-item" href="#">Kelvin </a>
+            </div>
+          </div>
+          <button> Search </button>
+        </form>
       </nav>
 
       <div id="main-window">
 
-          <div id="left_side">
-              
-          </div>
+        <div id="left-side">
+
+          <h5>Today's weather</h5>
+
+          <ul>
+            <li>Location: Brookyln</li>
+            <li><img src=".." alt="weather-type"></li>
+            <li>Description: Hot AF</li>
+          </ul>
+
+
+        </div>
 
       </div>
 
@@ -69,7 +80,7 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
-  <script src="main.a6757ab9dc7f3c9c2b6b.js?dbfc04af344046a66a00"></script>
+  <script src="main.a003cd59aba91617a7de.js?830739a1898712146b07"></script>
 </body>
 
 </html>

@@ -22,34 +22,45 @@
         <form action="">
           <input type="text" placeholder="User Identify">
           <button> Find Me </button>
-          <a href="#"><i class="fas fa-question-circle"></i></a>
+          <a href="#">
+            <i class="fas fa-question-circle"></i>
+          </a>
         </form>
         <h4>Travz the Weatherman</h4>
       </nav>
 
-      <nav class="navbar">
-          <form action="">
-              <input type="text" placeholder="Zip code or City">
-              <span class="dropdown">
-                  <a class="btn dropdown-toggle" href="#" role="button" id="imperialunit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Units (K)
-                  </a>
-                
-                  <div class="dropdown-menu" aria-labelledby="imperialunit">
-                    <a class="dropdown-item" href="#">Celcius</a>
-                    <a class="dropdown-item" href="#">Fahrenheit </a> 
-                    <a class="dropdown-item" href="#">Kelvin </a> 
-                  </div>
-                </span>
-                <button> Search </button>
-            </form>
+      <nav class="navbar" id="search-weather">
+        <form action="">
+          <input type="text" placeholder="Zipcode or City">
+          <div class="dropdown">
+            <a class="btn dropdown-toggle" href="#" role="button" id="imperialunit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Units (K)
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="imperialunit">
+              <a class="dropdown-item" href="#">Celcius</a>
+              <a class="dropdown-item" href="#">Fahrenheit </a>
+              <a class="dropdown-item" href="#">Kelvin </a>
+            </div>
+          </div>
+          <button> Search </button>
+        </form>
       </nav>
 
       <div id="main-window">
 
-          <div id="left_side">
-              
-          </div>
+        <div id="left-side">
+
+          <h5>Today's weather</h5>
+
+          <ul>
+            <li>Location: Brookyln</li>
+            <li><img src=".." alt="weather-type"></li>
+            <li>Description: Hot AF</li>
+          </ul>
+
+
+        </div>
 
       </div>
 
