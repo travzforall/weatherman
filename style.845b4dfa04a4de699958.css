@@ -4,6 +4,13 @@
   padding: 0;
   box-sizing: border-box; }
 
+input:focus,
+select:focus,
+textarea:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: none; }
+
 body {
   background-image: linear-gradient(to right bottom, rgba(230, 255, 2, 0.35), rgba(253, 2, 2, 0.5)), url(images/normal.jpg);
   background-size: cover;
@@ -12,6 +19,13 @@ body {
   width: 100vw;
   overflow-y: auto;
   overflow-x: hidden; }
+
+#secondary-nav {
+  background: rgba(0, 0, 0, 0.75);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
+  #secondary-nav h4 {
+    color: #00EFFF; }
 
 #search-weather {
   background: rgba(0, 0, 0, 0.5);
@@ -51,11 +65,15 @@ body {
 #main-window {
   width: 100%;
   margin: 10px 0;
-  display: flex; }
+  display: flex;
+  box-shadow: 3px 3px 3px black;
+  border-bottom-left-radius: 10px; }
 
 #left-side {
   width: 35%;
-  background: #e3e3e3;
+  background: #039590;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   padding: 20px; }
   #left-side .header {
     text-align: center;
@@ -65,12 +83,11 @@ body {
     text-align: center; }
     #left-side ul img {
       width: 100px;
-      height: 100px;
-      border: 1px solid red; }
+      height: 100px; }
 
 #right-side {
   width: 75%;
-  background: rgba(0, 112, 112, 0.712);
+  background: rgba(0, 0, 0, 0.712);
   padding: 20px; }
   #right-side h3 {
     text-align: right;
@@ -79,12 +96,13 @@ body {
 #five-day-forecast {
   display: flex;
   flex-wrap: nowrap;
-  background: rgba(0, 112, 112, 0.911);
-  text-align: center; }
+  background: #06191d;
+  text-align: center;
+  color: #ade9eb; }
   #five-day-forecast div {
     width: 18%;
     margin: 1%;
-    background: rgba(0, 0, 0, 0.479); }
+    background: rgba(255, 255, 255, 0.082); }
     #five-day-forecast div img {
       width: 40%; }
 
@@ -115,23 +133,24 @@ footer {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center; }
+  justify-content: center;
+  border-top: 15px solid #1C6E7D; }
   footer .country {
     font-size: 1.05rem;
     width: 15%;
     height: 85%;
-    margin: 5px 2%;
-    background: rgba(204, 204, 204, 0.993);
+    margin: 10px 2%;
+    background: #6268672c;
     padding: 5px;
     color: white;
     border: 0.5px solid white; }
     footer .country h4 {
       text-align: center;
       font-size: 0.85rem;
-      color: #04073d; }
+      color: #00B7CA; }
     footer .country hr {
       border: 0.5px white solid;
       margin: 0; }
@@ -143,8 +162,7 @@ footer {
       justify-content: space-between; }
       footer .country .time-zone img {
         width: 75px;
-        height: 75px;
-        color: white; }
+        height: 75px; }
       footer .country .time-zone p {
-        margin-top: 10px; }
+        margin-top: 20px; }
 
