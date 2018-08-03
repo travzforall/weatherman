@@ -19,9 +19,9 @@
   <div class="row">
     <div class="container">
       <nav class="navbar" id="secondary-nav">
-        <form action="">
-          <input type="text" placeholder="User Identify">
-          <button> Find Me </button>
+        <form action="index.html" id="user-form">
+          <input id="user" type="text" placeholder="User Identify" required oninvalid="this.setCustomValidity('This unique code was given on registration')">
+          <button id="locate-user"  data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">   Find Me </button>
           <a href="#">
             <i class="fas fa-question-circle"></i>
           </a>

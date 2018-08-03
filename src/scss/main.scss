@@ -34,11 +34,25 @@ body {
     }
 
     input {
-        padding: 5px;
+        padding: 2px;
+        background: rgb(205, 216, 218);
     }
 
     button {
-        padding: 5px;
+        padding: 4px;
+        background: #1C6E7D;
+        border: none;
+        color: white;
+        font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+            background: rgba(28, 110, 125, 0.726);
+        }
+    }
+
+    i {
+        color: #00EFFF;
     }
 }
 
@@ -72,8 +86,10 @@ body {
             border: none;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
+            font-weight: bold;
             &:hover {
                 cursor: pointer;
+                background: rgba(230, 151, 5, 0.534);
             }
         }
         .dropdown-menu {

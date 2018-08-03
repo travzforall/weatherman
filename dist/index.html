@@ -12,16 +12,16 @@
 
   <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"> -->
   <title>The Weather</title>
-<link href="style.845b4dfa04a4de699958.css?d17c5bcb2d7a55278175" rel="stylesheet"></head>
+<link href="style.cf7b12c3e2ad4a9daac7.css?b1343b6d39cb0233ba78" rel="stylesheet"></head>
 
 <body>
 
   <div class="row">
     <div class="container">
       <nav class="navbar" id="secondary-nav">
-        <form action="">
-          <input type="text" placeholder="User Identify">
-          <button> Find Me </button>
+        <form action="index.html" id="user-form">
+          <input id="user" type="text" placeholder="User Identify" required oninvalid="this.setCustomValidity('This unique code was given on registration')">
+          <button id="locate-user"  data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">   Find Me </button>
           <a href="#">
             <i class="fas fa-question-circle"></i>
           </a>
@@ -155,6 +155,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
   <!-- <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script> -->
-<script type="text/javascript" src="main.77ed14d22449090cdc40.js?d17c5bcb2d7a55278175"></script></body>
+<script type="text/javascript" src="main.85b343724c50820f5f4b.js?b1343b6d39cb0233ba78"></script></body>
 
 </html>
