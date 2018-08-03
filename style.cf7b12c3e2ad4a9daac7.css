@@ -26,6 +26,20 @@ body {
   border-bottom-right-radius: 5px; }
   #secondary-nav h4 {
     color: #00EFFF; }
+  #secondary-nav input {
+    padding: 2px;
+    background: #cdd8da; }
+  #secondary-nav button {
+    padding: 4px;
+    background: #1C6E7D;
+    border: none;
+    color: white;
+    font-weight: bold; }
+    #secondary-nav button:hover {
+      cursor: pointer;
+      background: rgba(28, 110, 125, 0.726); }
+  #secondary-nav i {
+    color: #00EFFF; }
 
 #search-weather {
   background: rgba(0, 0, 0, 0.5);
@@ -54,9 +68,11 @@ body {
       background: #e69705;
       border: none;
       border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px; }
+      border-bottom-right-radius: 5px;
+      font-weight: bold; }
       #search-weather form button:hover {
-        cursor: pointer; }
+        cursor: pointer;
+        background: rgba(230, 151, 5, 0.534); }
     #search-weather form .dropdown-menu {
       margin-top: 8px;
       border-top-left-radius: 0;
