@@ -1,6 +1,5 @@
 import "./scss/main.scss";
-
-import img from './images/normal.jpg';
+// import 'jquery';
  
 
 
@@ -10,10 +9,10 @@ $(document).ready(() => {
 
 function changeBackground(type) {
     let body = $('body');
+    console.log(body);
     if (type === undefined) {
-    console.log(type)
-
-        // $(body).css({ "background-color": "url('../images/normal.jpg')"});
+ 
+ 
     }
 
 
