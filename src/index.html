@@ -20,8 +20,8 @@
     <div class="container">
       <nav class="navbar" id="secondary-nav">
         <form action="index.html" id="user-form">
-          <input id="user" type="text" placeholder="User Identify" required oninvalid="this.setCustomValidity('This unique code was given on registration')">
-          <button id="locate-user"  data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">   Find Me </button>
+          <input id="user" type="text" placeholder="User Identify" required>
+          <button id="locate-user" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"> Find Me </button>
           <a href="#">
             <i class="fas fa-question-circle"></i>
           </a>
@@ -30,15 +30,21 @@
       </nav>
 
       <nav class="navbar" id="search-weather">
-        <form action="">
-          <input type="text" placeholder="Zipcode or City">
+        <div id="cityResults" class="hidden">
+          <ul id="results">
+          </ul>
+          <hr>
+          <h6>Search Results</h6>
+        </div>
+        <form id="search-form">
+          <input type="text" placeholder="Zipcode or City" id="user-input" value="11207" required>
+          <input type="text" hidden id="ID">
           <div class="dropdown">
             <a class="btn dropdown-toggle" href="#" role="button" id="imperialunit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Units (K)
+              Celcius
             </a>
 
             <div class="dropdown-menu" aria-labelledby="imperialunit">
-              <a class="dropdown-item" href="#">Celcius</a>
               <a class="dropdown-item" href="#">Fahrenheit </a>
               <a class="dropdown-item" href="#">Kelvin </a>
             </div>
@@ -54,21 +60,27 @@
           <h5 class="header">Today's Weather</h5>
 
           <ul>
-            <li id="location">Location: Brookyln</li>
+            <li>Location:
+              <span id="location"> Brookyln</span>
+            </li>
             <li id="day-pic">
               <img src="./images/rain.png" alt="weather-type">
             </li>
-            <li id="description">Description: Hot AF</li>
+            <li>Description:
+              <span id="description"> Brookyln</span>
+            </li>
             <li class="temp">Low Temp:
               <span id="min-temp"> 23 deg </span>
             </li>
             <li class="temp">High Temp:
               <span id="max-temp"> 50 deg </span>
             </li>
-            <li id="humidity">Humidity: Holy Shit It's humid</li>
+            <li>Humidity:
+              <span id="humidity"> Brookyln</span>
+            </li>
 
             <hr>
-            <li>Time Now:</li>
+            <li>Time</li>
             <li id="time-stamp">
               09: 30 PM
             </li>
@@ -76,13 +88,11 @@
         </div>
 
         <div id="right-side">
-          <h3  style="color: white">Quote of the day</h3>
-          <blockquote>Give them a helping hand, you get gunshot in return Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            <p>- Vybez Kartel</p>
-          </blockquote>
+          <h3 style="color: white">Quote of the day</h3>
+          <blockquote id="quote" ></blockquote>
 
           <hr>
-          <h3  style="color: white">Five Day Forecast</h3>
+          <h3 style="color: white">Five Day Forecast</h3>
           <div id="five-day-forecast">
 
             <div class="day" id="day1">
