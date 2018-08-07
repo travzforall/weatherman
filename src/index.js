@@ -12,8 +12,8 @@ let search;
 $(document).ready(() => {
     printSecondary(getSecondaryTimes());
     loadRandomQuote();
-    print5DayForcast(getDataFor5Days(13122));
-    setData(getWeather(13122));
+    print5DayForcast(getDataFor5Days(11207));
+    setData(getWeather(11207));
 
     locate_user = $('#locate-user');
     search = $('#search-form');
@@ -21,17 +21,8 @@ $(document).ready(() => {
     let user_form, user;
 
     user_form = $('#user-form');
-    $(user_form).submit(event => {
-        // event.preventDefault();
-        user = $('#user');
-        const validated = validateInput(user);
-
-        if (validated) {
-            console.log("Data sent to server, then JSON recieved")
-        } else {
-            const user = $("#user");
-
-        }
+    $(user_form).submit(event => { 
+        user = $('#user'); 
     });
 
 
@@ -82,12 +73,7 @@ function changeBackground(type) {
     }
 }
 
-function validateInput(inputField) {
-    var sd = 4;
-    console.log(sd);
-    console.log($(inputField).val());
-    return false;
-}
+ 
 
 function showCityResults(data) {
     var resultWindow = $("#cityResults");
