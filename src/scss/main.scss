@@ -165,12 +165,17 @@ body {
     ul {
         list-style: none;
         text-align: center;
+        font-weight: bold;
         img {
             width: 100px;
-            height: 100px; // border: 1px solid red;
+            height: 100px; 
+            background: rgba(255, 255, 255, 0.712);
+            padding: 10px;
+            border-radius: 50px;
         }
     }
 }
+ 
 
 #right-side {
     width: 75%;
@@ -195,6 +200,14 @@ body {
         img {
             width: 40%;
         }
+
+        .five {
+            background: rgba(243, 241, 241, 0.5);
+            padding: 7px;
+            border-radius: 50px;
+        }
+
+
     }
 }
 
@@ -259,8 +272,12 @@ footer {
             flex-wrap: nowrap;
             justify-content: space-between;
             img {
-                width: 75px;
-                height: 75px;
+                width: 55px;
+                height: 55px;
+                background: rgba(255, 255, 255, 0.712);
+                border-radius: 50px;
+                padding: 5px;
+                margin-top: 5px;
             }
             p {
                 margin-top: 20px;

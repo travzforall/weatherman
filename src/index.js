@@ -1,5 +1,5 @@
 import "./scss/main.scss";
-import { getWeather, getDataFor5Days, filterItems, getRandomQuote } from './twm';
+import { getWeather, getDataFor5Days, filterItems, getRandomQuote, getSecondaryTimes } from './twm';
 import { format } from "url";
 
 
@@ -10,9 +10,9 @@ let search;
 
 
 $(document).ready(() => {
-
+    printSecondary(getSecondaryTimes());
     loadRandomQuote();
-    print5DayForcast(getDataFor5Days(13122)); 
+    print5DayForcast(getDataFor5Days(13122));
     setData(getWeather(13122));
 
     locate_user = $('#locate-user');
@@ -34,18 +34,21 @@ $(document).ready(() => {
         }
     });
 
-  
+
 
     $(search).submit(event => {
         event.preventDefault();
-        const searchItem = $("#user-input").val();
+        var searchItem = $("#user-input").val();
         if (!isNaN(searchItem)) {
             var data = getWeather(searchItem);
             print5DayForcast(getDataFor5Days(searchItem));
             setData(data);
 
         } else {
-            console.log(true)
+            searchItem = $("#ID").val();
+            var data = getWeather(searchItem, 'id');
+            print5DayForcast(getDataFor5Days(searchItem, 'id'));
+            setData(data);
         }
     });
 
@@ -59,7 +62,7 @@ $(document).ready(() => {
         }
     });
 
-   
+
 
 });
 
@@ -115,7 +118,8 @@ function populateForm(city) {
 }
 
 function setData(data) {
-    console.log(data)
+
+    let image = $("#one-image");
     let location = $("#location");
     let desc = $("#description");
     let min_temp = $("#min-temp");
@@ -131,7 +135,7 @@ function setData(data) {
 
     var d = new Date();
 
-
+    $(image).attr("src", `http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
     $(location).html(`${data.name}, ${data.sys.country}`);
     $(desc).html(`${data.weather[0].main}`);
     $(min_temp).html(`${data.main.temp_min} \xB0C`);
@@ -166,14 +170,70 @@ function print5DayForcast(arr) {
 function formatData(element) {
     return (`
     <h5 class="header">${(new Date(element.dt_txt.slice(0, 10)).toDateString()).substring(4)}</h5>
-    <img src="http://openweathermap.org/img/w/${element.weather[0].icon}.png" alt="Image" id="day-image1">
+    <img src="http://openweathermap.org/img/w/${element.weather[0].icon}.png" alt="Image" class="five">
     <p id="temp-day1">${element.weather[0].main}</p>
     `);
 }
- 
-function formatDate(date) {
 
-} 
+function printSecondary(data) {
+
+    var country0 = $('#country0');
+    var country1 = $('#country1');
+    var country2 = $('#country2');
+    var country = $('.country');
+    $(country).empty();
+
+    $(country0).append(
+        `<h4>China, CN</h4>
+            <hr>
+            <div class="time-zone">
+              <img src="${getRandomWeather()}" alt="Image" id="day-image5">
+              <p>${formatDate(new Date(data[0].formatted), true)}</p>           
+              </div>`
+    );
+
+    $(country1).append(
+        `<h4>${data[0].countryName}, ${data[0].countryCode} </h4>
+            <hr>
+            <div class="time-zone">
+              <img src="${getRandomWeather()}" alt="Image" id="day-image5">
+              <p>${formatDate(new Date(data[0].formatted), false)}</p>           
+              </div>`
+    );
+
+
+    
+    $(country2).append(
+        `<h4>${data[1].countryName}, ${data[1].countryCode} </h4>
+            <hr>
+            <div class="time-zone">
+              <img src="${getRandomWeather()}" alt="Image" id="day-image5">
+         <p>${formatDate(new Date(data[1].formatted), false)}</p>           
+              </div>`
+    );
 
  
+}
  
+
+function getRandomWeather() {
+    var arr = [
+        'http://openweathermap.org/img/w/02n.png',
+        'http://openweathermap.org/img/w/01n.png',
+        'http://openweathermap.org/img/w/03n.png',
+        'http://openweathermap.org/img/w/04n.png',
+    ];
+    var num = Math.floor(Math.random() * arr.length);
+    return arr[num];
+}
+
+
+function formatDate(myDate, opposite) {
+    var type = myDate.getHours() < 12? 'AM': 'PM';
+    var day =  `${(myDate).getHours()%12}:${(myDate).getMinutes()} ${type}`;
+    if (opposite) {
+        type = myDate.getHours() > 12? 'AM': 'PM';
+        day =  `${(myDate).getHours()%12}:${(myDate).getMinutes()} ${type}`;
+    }
+    return day;
+}
